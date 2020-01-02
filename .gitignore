@@ -4,6 +4,8 @@
 .ideal/
 target/
 *.iml
+mvnw*
+.mvn
 
 # Log file
 *.log
