@@ -1,4 +1,4 @@
-package com.atguigu.gmall.pms;
+package com.atguigu.gmall.wms;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -9,13 +9,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@MapperScan("com.atguigu.gmall.pms.dao")
-@RefreshScope
+@MapperScan("com.atguigu.gmall.wms.dao")
 @EnableDiscoveryClient
-public class GmallPmsApplication {
+@RefreshScope
+public class GmallWmsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GmallPmsApplication.class, args);
+        SpringApplication.run(GmallWmsApplication.class, args);
     }
 
 }
