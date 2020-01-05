@@ -7,23 +7,26 @@ spring:
         - id: pms-route
           uri: lb://pms-service
           predicates:
-            - Path:/pms/**
-        - id: oms-route
-            uri: lb://oms-service
-            predicates:
-              - Path:/oms/**
-        - id: sms-route
-            uri: lb://sms-service
-            predicates:
-              - Path:/sms/**
-        - id: ums-route
-            uri: lb://ums-service
-            predicates:
-              - Path:/ums/**
+            - Path=/pms/**
         - id: wms-route
-            uri: lb://wms-service
-            predicates:
-              - Path:/wms/**
+          uri: lb://wms-service
+          predicates:
+            - Path=/wms/**
+        - id: oms-route
+          uri: lb://oms-service
+          predicates:
+            - Path=/oms/**
+        - id: ums-route
+          uri: lb://ums-service
+          predicates:
+            - Path=/ums/**
+        - id: sms-route
+          uri: lb://sms-service
+          predicates:
+            - Path=/sms/**
+
+
+
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
