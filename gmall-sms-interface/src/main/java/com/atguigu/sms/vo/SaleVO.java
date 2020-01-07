@@ -1,16 +1,13 @@
-package com.atguigu.gmall.pms.vo;
+package com.atguigu.sms.vo;
 
-import com.atguigu.gmall.pms.entity.SkuInfoEntity;
-import com.atguigu.gmall.pms.entity.SkuSaleAttrValueEntity;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.List;
-@Data
-public class SkuInfoVO extends SkuInfoEntity {
 
-    private List<String> images;
+@Data
+public class SaleVO {
+    private Long skuId;
     //积分活动
     private BigDecimal growBounds;
     private BigDecimal buyBounds;
@@ -33,6 +30,4 @@ public class SkuInfoVO extends SkuInfoEntity {
 
     //是否叠加其他优惠[0-不可叠加，1-可叠加]
     private Integer ladderAddOther;
-    //销售属性组合
-    private List<SkuSaleAttrValueEntity> saleAttrs;
 }

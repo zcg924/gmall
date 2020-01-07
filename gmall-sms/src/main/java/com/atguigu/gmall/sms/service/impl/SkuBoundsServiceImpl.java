@@ -1,6 +1,15 @@
 package com.atguigu.gmall.sms.service.impl;
 
+import com.atguigu.gmall.sms.dao.SkuFullReductionDao;
+import com.atguigu.gmall.sms.dao.SkuLadderDao;
+import com.atguigu.gmall.sms.entity.SkuFullReductionEntity;
+import com.atguigu.gmall.sms.entity.SkuLadderEntity;
+import com.atguigu.sms.vo.SaleVO;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -17,6 +26,10 @@ import com.atguigu.gmall.sms.service.SkuBoundsService;
 @Service("skuBoundsService")
 public class SkuBoundsServiceImpl extends ServiceImpl<SkuBoundsDao, SkuBoundsEntity> implements SkuBoundsService {
 
+    @Autowired
+    private SkuFullReductionDao skuFullReductionDao;
+    @Autowired
+    private SkuLadderDao skuLadderDao;
     @Override
     public PageVo queryPage(QueryCondition params) {
         IPage<SkuBoundsEntity> page = this.page(
@@ -25,6 +38,26 @@ public class SkuBoundsServiceImpl extends ServiceImpl<SkuBoundsDao, SkuBoundsEnt
         );
 
         return new PageVo(page);
+    }
+
+    @Override
+    public void saveSales(SaleVO saleVO) {
+        // 3.1. 积分优惠
+        SkuBoundsEntity skuBoundsEntity = new SkuBoundsEntity();
+        BeanUtils.copyProperties(saleVO,skuBoundsEntity);
+        List<Integer> works = saleVO.getWork();
+        skuBoundsEntity.setWork(works.get(0) * 8 + works.get(1) * 4 + works.get(2) * 2 + works.get(3));
+        this.save(skuBoundsEntity);
+        // 3.2. 满减优惠
+        SkuFullReductionEntity skuFullReductionEntity = new SkuFullReductionEntity();
+        BeanUtils.copyProperties(saleVO,skuFullReductionEntity);
+        skuFullReductionEntity.setAddOther(saleVO.getFullAddOther());
+        this.skuFullReductionDao.insert(skuFullReductionEntity);
+        // 3.3. 数量折扣
+        SkuLadderEntity skuLadderEntity = new SkuLadderEntity();
+        BeanUtils.copyProperties(saleVO,skuLadderEntity);
+        skuLadderEntity.setAddOther(saleVO.getLadderAddOther());
+        this.skuLadderDao.insert(skuLadderEntity);
     }
 
 }

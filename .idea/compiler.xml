@@ -13,6 +13,7 @@
         <module name="gmall-oms" />
         <module name="gmall-pms" />
         <module name="gmall-sms" />
+        <module name="gmall-sms-interface" />
         <module name="gmall-ums" />
         <module name="gmall-wms" />
       </profile>
