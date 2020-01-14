@@ -11,6 +11,7 @@ package com.atguigu.core.bean;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.List;
  */
 @ApiModel
 @Data
+@NoArgsConstructor
 public class PageVo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	/**

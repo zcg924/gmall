@@ -6,53 +6,14 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-pms/pom.xml" />
-        <option value="$PROJECT_DIR$/gmall-sms/pom.xml" />
-        <option value="$PROJECT_DIR$/gmall-ums/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-oms/pom.xml" />
-        <option value="$PROJECT_DIR$/gmall-generator/pom.xml" />
-        <option value="$PROJECT_DIR$/gmall-wms/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-search/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-sms/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-wms/pom.xml" />
       </list>
     </option>
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Android</id>
-          </State>
-          <State>
-            <id>CorrectnessLintAndroid</id>
-          </State>
-          <State>
-            <id>Gradle</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
-            <id>LintAndroid</id>
-          </State>
-          <State>
-            <id>Maven</id>
-          </State>
-          <State>
-            <id>MavenMigrationKotlin</id>
-          </State>
-          <State>
-            <id>MigrationKotlin</id>
-          </State>
-          <State>
-            <id>OSGi</id>
-          </State>
-          <State>
-            <id>Probable bugsGradle</id>
-          </State>
-        </expanded-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

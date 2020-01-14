@@ -1,6 +1,6 @@
 package com.atguigu.gmall.pms.vo;
 
-import com.atguigu.gmall.pms.entity.ProductAttrValueEntity;
+import com.atguigu.gmall.pms.api.entity.ProductAttrValueEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 
