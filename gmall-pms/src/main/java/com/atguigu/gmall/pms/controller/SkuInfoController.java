@@ -3,7 +3,7 @@ package com.atguigu.gmall.pms.controller;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
-import com.atguigu.gmall.pms.api.entity.SkuInfoEntity;
+import com.atguigu.gmall.pms.entity.SkuInfoEntity;
 import com.atguigu.gmall.pms.service.SkuInfoService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;

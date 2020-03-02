@@ -3,7 +3,8 @@ package com.atguigu.gmall.pms.controller;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
-import com.atguigu.gmall.pms.api.entity.CategoryEntity;
+import com.atguigu.gmall.pms.entity.CategoryEntity;
+import com.atguigu.gmall.pms.vo.CategoryVO;
 import com.atguigu.gmall.pms.service.CategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,6 +31,13 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+
+
+    @GetMapping("{pid}")
+    public Resp<List<CategoryVO>> queryCategoriesWithSub(@PathVariable("pid")Long pid){
+        List<CategoryVO> categoryVOS = this.categoryService.queryCategoriesWithSub(pid);
+        return Resp.ok(categoryVOS);
+    }
 
     @GetMapping
     @ApiOperation("显示全部列表")

@@ -1,6 +1,6 @@
 package com.atguigu.gmall.pms.service;
 
-import com.atguigu.gmall.pms.api.entity.SkuInfoEntity;
+import com.atguigu.gmall.pms.entity.SkuInfoEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;

@@ -1,4 +1,4 @@
-package com.atguigu.gmall.pms.api.entity;
+package com.atguigu.gmall.pms.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -9,7 +9,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * sku图片
+ * sku销售属性&值
  * 
  * @author zcg
  * @email lxf@atguigu.com
@@ -17,8 +17,8 @@ import java.io.Serializable;
  */
 @ApiModel
 @Data
-@TableName("pms_sku_images")
-public class SkuImagesEntity implements Serializable {
+@TableName("pms_sku_sale_attr_value")
+public class SkuSaleAttrValueEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -33,19 +33,24 @@ public class SkuImagesEntity implements Serializable {
 	@ApiModelProperty(name = "skuId",value = "sku_id")
 	private Long skuId;
 	/**
-	 * 图片地址
+	 * attr_id
 	 */
-	@ApiModelProperty(name = "imgUrl",value = "图片地址")
-	private String imgUrl;
+	@ApiModelProperty(name = "attrId",value = "attr_id")
+	private Long attrId;
 	/**
-	 * 排序
+	 * 销售属性名
 	 */
-	@ApiModelProperty(name = "imgSort",value = "排序")
-	private Integer imgSort;
+	@ApiModelProperty(name = "attrName",value = "销售属性名")
+	private String attrName;
 	/**
-	 * 默认图[0 - 不是默认图，1 - 是默认图]
+	 * 销售属性值
 	 */
-	@ApiModelProperty(name = "defaultImg",value = "默认图[0 - 不是默认图，1 - 是默认图]")
-	private Integer defaultImg;
+	@ApiModelProperty(name = "attrValue",value = "销售属性值")
+	private String attrValue;
+	/**
+	 * 顺序
+	 */
+	@ApiModelProperty(name = "attrSort",value = "顺序")
+	private Integer attrSort;
 
 }

@@ -3,7 +3,7 @@ package com.atguigu.gmall.pms.controller;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
-import com.atguigu.gmall.pms.api.entity.SkuImagesEntity;
+import com.atguigu.gmall.pms.entity.SkuImagesEntity;
 import com.atguigu.gmall.pms.service.SkuImagesService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

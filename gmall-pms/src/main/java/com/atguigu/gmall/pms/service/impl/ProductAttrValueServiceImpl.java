@@ -10,7 +10,7 @@ import com.atguigu.core.bean.Query;
 import com.atguigu.core.bean.QueryCondition;
 
 import com.atguigu.gmall.pms.dao.ProductAttrValueDao;
-import com.atguigu.gmall.pms.api.entity.ProductAttrValueEntity;
+import com.atguigu.gmall.pms.entity.ProductAttrValueEntity;
 import com.atguigu.gmall.pms.service.ProductAttrValueService;
 
 import java.util.List;

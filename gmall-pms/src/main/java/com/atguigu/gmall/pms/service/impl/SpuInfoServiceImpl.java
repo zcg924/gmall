@@ -4,7 +4,7 @@ import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.Query;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.gmall.pms.dao.*;
-import com.atguigu.gmall.pms.api.entity.*;
+import com.atguigu.gmall.pms.entity.*;
 import com.atguigu.gmall.pms.feign.GmallSmsClient;
 import com.atguigu.gmall.pms.service.*;
 import com.atguigu.gmall.pms.vo.BaseAttrValueVO;
@@ -16,6 +16,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,8 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
     @Autowired
     private SpuInfoDescService descService;
 
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
 
     @Override
@@ -101,7 +104,13 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         // 2. sku相关信息
         this.saveSkuAndSales(spuInfoVO, spuId);
 
+        sendMsg(spuId,"insert");
 
+
+    }
+
+    private void sendMsg(Long spuId , String type){
+        this.amqpTemplate.convertAndSend("GMALL-PMS-EXCHANGE","item."+type , spuId);
     }
 
     @Override

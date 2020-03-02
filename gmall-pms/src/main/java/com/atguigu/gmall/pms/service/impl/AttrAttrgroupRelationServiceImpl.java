@@ -13,7 +13,7 @@ import com.atguigu.core.bean.Query;
 import com.atguigu.core.bean.QueryCondition;
 
 import com.atguigu.gmall.pms.dao.AttrAttrgroupRelationDao;
-import com.atguigu.gmall.pms.api.entity.AttrAttrgroupRelationEntity;
+import com.atguigu.gmall.pms.entity.AttrAttrgroupRelationEntity;
 import com.atguigu.gmall.pms.service.AttrAttrgroupRelationService;
 
 

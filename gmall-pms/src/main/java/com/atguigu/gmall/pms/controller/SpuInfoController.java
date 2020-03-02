@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.atguigu.gmall.pms.api.entity.SpuInfoEntity;
+import com.atguigu.gmall.pms.entity.SpuInfoEntity;
 import com.atguigu.gmall.pms.service.SpuInfoService;
 
 

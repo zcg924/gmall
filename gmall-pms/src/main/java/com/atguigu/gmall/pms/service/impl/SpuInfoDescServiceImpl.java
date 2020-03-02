@@ -14,7 +14,7 @@ import com.atguigu.core.bean.Query;
 import com.atguigu.core.bean.QueryCondition;
 
 import com.atguigu.gmall.pms.dao.SpuInfoDescDao;
-import com.atguigu.gmall.pms.api.entity.SpuInfoDescEntity;
+import com.atguigu.gmall.pms.entity.SpuInfoDescEntity;
 import com.atguigu.gmall.pms.service.SpuInfoDescService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;

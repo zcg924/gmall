@@ -3,7 +3,7 @@ package com.atguigu.gmall.pms.controller;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
-import com.atguigu.gmall.pms.api.entity.AttrGroupEntity;
+import com.atguigu.gmall.pms.entity.AttrGroupEntity;
 import com.atguigu.gmall.pms.service.AttrGroupService;
 import com.atguigu.gmall.pms.vo.GroupVO;
 import io.swagger.annotations.Api;

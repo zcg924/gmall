@@ -2,7 +2,7 @@ package com.atguigu.gmall.pms.service;
 
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
-import com.atguigu.gmall.pms.api.entity.ProductAttrValueEntity;
+import com.atguigu.gmall.pms.entity.ProductAttrValueEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
