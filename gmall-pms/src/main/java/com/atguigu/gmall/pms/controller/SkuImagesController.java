@@ -5,6 +5,7 @@ import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
 import com.atguigu.gmall.pms.entity.SkuImagesEntity;
 import com.atguigu.gmall.pms.service.SkuImagesService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-
-
+import java.util.List;
 
 
 /**
@@ -29,6 +29,14 @@ import java.util.Arrays;
 public class SkuImagesController {
     @Autowired
     private SkuImagesService skuImagesService;
+
+    @GetMapping("{skuId}")
+    public Resp<List<SkuImagesEntity>> queryImagesBySkuId(@PathVariable("skuId")Long skuId){
+        QueryWrapper<SkuImagesEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("sku_id", skuId);
+        List<SkuImagesEntity> skuImagesEntities = this.skuImagesService.list(queryWrapper);
+        return Resp.ok(skuImagesEntities);
+    }
 
     /**
      * 列表

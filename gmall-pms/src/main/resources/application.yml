@@ -1,6 +1,0 @@
-spring:
-  rabbitmq:
-    host: 192.168.249.201
-    virtual-host: /zcg924
-    username: zcg924
-    password: zcg924

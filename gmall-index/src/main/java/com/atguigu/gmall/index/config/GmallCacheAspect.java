@@ -40,7 +40,7 @@ public class GmallCacheAspect {
         Method method = signature.getMethod();
         GmallCache gmallCache = method.getAnnotation(GmallCache.class);
         Class returnType = signature.getReturnType();
-        List<Object> args =        Arrays.asList(joinPoint.getArgs());
+        List<Object> args = Arrays.asList(joinPoint.getArgs());
 
         //获取缓存数据
         String prefix = gmallCache.value();
