@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/guli_ums
+    username: root
+    password: 123456
+  redis:
+    host: 127.0.0.1
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/ums/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+
+aliyun:
+  sms:
+    regionid: cn-hangzhou
+    keyid: LTAI4FcB6wVvpA1o299ReBu2
+    keysecret: FTetJUzVgwMLQ6WpsVDb7HPD9MzyTC
+    templatecode: SMS_184825634
+    signname: 谷粒
