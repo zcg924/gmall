@@ -1,6 +1,6 @@
 package com.atguigu.gmall.wms.service;
 
-import com.atguigu.wms.Api.entity.FeightTemplateEntity;
+import com.atguigu.gmall.wms.entity.FeightTemplateEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;

@@ -2,6 +2,7 @@ package com.atguigu.gmall.ums.controller;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -10,6 +11,7 @@ import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
 import com.atguigu.core.utils.RandomUtils;
+import com.atguigu.gmall.ums.entity.MemberReceiveAddressEntity;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.R;
 import io.swagger.annotations.Api;

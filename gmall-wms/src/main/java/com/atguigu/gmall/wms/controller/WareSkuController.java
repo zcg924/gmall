@@ -2,14 +2,14 @@ package com.atguigu.gmall.wms.controller;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
 import com.atguigu.gmall.wms.service.WareSkuService;
-import com.atguigu.wms.Api.entity.WareSkuEntity;
+import com.atguigu.gmall.wms.entity.WareSkuEntity;
+import com.atguigu.gmall.wms.vo.SkuLockVO;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,6 +34,14 @@ import org.springframework.web.bind.annotation.*;
 public class WareSkuController {
     @Autowired
     private WareSkuService wareSkuService;
+
+    @ApiOperation("查询库存并锁定库存")
+    @PostMapping
+    public Resp<List<SkuLockVO>> checkAndLock(@RequestBody List<SkuLockVO> skuLockVOS){
+
+        List<SkuLockVO> skuLocks = this.wareSkuService.checkAndLock(skuLockVOS);
+        return Resp.ok(skuLocks);
+    }
 
     @ApiOperation("获取某个sku的库存信息")
     @GetMapping("{skuId}")

@@ -154,6 +154,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
         member.setIntegration(1000);
         member.setGrowth(1000);
         member.setStatus(1);
+        member.setSalt(salt);
         member.setCreateTime(new Date());
         this.save(member);
         //5.删除验证码
@@ -164,7 +165,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
     @Override
     public MemberEntity queryUser(String username, String password) {
         //1.根据用户名查询用户信息
-        MemberEntity memberEntity = this.baseMapper.selectOne(new QueryWrapper<MemberEntity>().eq("username", username));
+        MemberEntity memberEntity = this.getOne(new QueryWrapper<MemberEntity>().eq("username", username));
         //2.判断用户是否为空
         if(memberEntity == null){
             return memberEntity;

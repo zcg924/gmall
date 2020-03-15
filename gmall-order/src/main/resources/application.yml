@@ -1,0 +1,27 @@
+server:
+  port: 8091
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 127.0.0.1
+  rabbitmq:
+    host: 192.168.249.201
+    virtual-host: /zcg924
+    username: zcg924
+    password: zcg924
+jwt:
+  token:
+    pubKeyPath: F:\work\RSA\rsa.pub
+    cookieName: gmall-token
+    userKey: user-key
+    expireTime: 7776000
+alipay:
+  app_id: 2016101700704588
+  notify_url: http://f5z7yyrbiu.52http.net/order/pay/success # 域名是哲西云提供的域名，路径是订单支付成功回调的路径
+  return_url: http://localhost:2000/pay/success.html
+  sign_type: RSA2
+  charset: utf-8
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do

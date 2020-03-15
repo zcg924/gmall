@@ -1,7 +1,6 @@
 package com.atguigu.gmall.item.service;
 
 import com.atguigu.core.bean.Resp;
-import com.atguigu.gmall.item.config.ThreadPoolConfig;
 import com.atguigu.gmall.item.feign.GmallPmsClient;
 import com.atguigu.gmall.item.feign.GmallSmsClient;
 import com.atguigu.gmall.item.feign.GmallWmsClient;
@@ -9,8 +8,7 @@ import com.atguigu.gmall.item.vo.ItemVO;
 import com.atguigu.gmall.pms.entity.*;
 import com.atguigu.gmall.pms.vo.ItemGroupVO;
 import com.atguigu.sms.vo.ItemSaleVO;
-import com.atguigu.wms.Api.entity.WareSkuEntity;
-import com.baomidou.mybatisplus.extension.api.R;
+import com.atguigu.gmall.wms.entity.WareSkuEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

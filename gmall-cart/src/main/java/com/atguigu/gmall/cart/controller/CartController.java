@@ -44,6 +44,7 @@ public class CartController {
         return Resp.ok(null);
     }
 
+    @ApiOperation("选取购物车")
     @PostMapping("check")
     public Resp<Object> check(@RequestBody Cart cart){
 
@@ -58,6 +59,7 @@ public class CartController {
         return Resp.ok(null);
     }
 
+    @ApiOperation("查询已选中的购物车")
     @GetMapping("{userId}")
     public List<Cart> queryCheckedCarts(@PathVariable("userId")Long userId){
         return this.cartService.queryCheckedCarts(userId);

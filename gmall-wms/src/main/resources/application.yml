@@ -12,8 +12,13 @@ spring:
     password: 123456
   redis:
     host: 127.0.0.1
+  rabbitmq:
+    host: 192.168.249.201
+    virtual-host: /zcg924
+    username: zcg924
+    password: zcg924
 mybatis-plus:
-  mapper-locations: classpath:mappper/pms/**/*.xml
+  mapper-locations: classpath:mapper/wms/**/*.xml
   global-config:
     db-config:
       id-type: auto
